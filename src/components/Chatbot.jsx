@@ -57,12 +57,12 @@ function Chatbot() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-black text-black p-6">
-      <div className="flex items-center justify-between bg-[#c9b8f0] backdrop-blur-lg text-black p-6 rounded-2xl border border-[#8b5cf6]">
+    <div className="flex flex-col h-screen bg-white p-6">
+      <div className="flex items-center justify-between bg-[#ffffff] backdrop-blur-lg p-6 rounded-2xl border border-[#8b5cf6]/20">
         <div className="flex items-center gap-3">
           <i className="fas fa-robot text-2xl text-[#8b5cf6]"></i>
           <h1 className="text-2xl font-bold font-poppins bg-gradient-to-r from-[#8b5cf6] to-[#6d28d9] text-transparent bg-clip-text">
-            LeetGuru AI
+            CodeMentor AI
           </h1>
         </div>
         <div className="flex gap-3">
@@ -71,7 +71,7 @@ function Chatbot() {
         </div>
       </div>
 
-      <div className="flex-1 overflow-auto my-6 rounded-2xl bg-black backdrop-blur-lg p-6 border border-[#8b5cf6]">
+      <div className="flex-1 overflow-auto my-6 rounded-2xl bg-white p-6 border-2 border-[#8b5cf6]/20">
         {messages.map((message, index) => (
           <div
             key={index}
@@ -82,10 +82,10 @@ function Chatbot() {
             }`}
           >
             <div
-              className={`max-w-[80%] p-4 rounded-2xl backdrop-blur-lg ${
+              className={`max-w-[80%] p-4 rounded-2xl ${
                 message.role === "user"
-                  ? "bg-[#8b5cf6] bg-opacity-90 text-black"
-                  : "bg-[#c9b8f0] border border-[#8b5cf6] text-black"
+                  ? "bg-[#8b5cf6] text-white"
+                  : "bg-gray-100 text-black"
               }`}
             >
               <ReactMarkdown className="font-inter leading-relaxed">
@@ -102,13 +102,13 @@ function Chatbot() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask me about algorithms, data structures, or system design..."
-          className="flex-1 p-4 rounded-2xl bg-[#c9b8f0] backdrop-blur-lg text-black placeholder-gray-500 border border-[#8b5cf6] focus:outline-none focus:border-[#8b5cf6] font-inter"
+          className="flex-1 p-4 rounded-2xl bg-white text-black placeholder-gray-500 border-2 border-[#8b5cf6]/20 focus:outline-none focus:border-[#8b5cf6] font-inter"
           disabled={loading}
         />
         <button
           type="submit"
           disabled={loading}
-          className="bg-[#8b5cf6] text-black px-8 py-4 rounded-2xl hover:bg-[#6d28d9] transition-all transform hover:scale-105 font-inter flex items-center gap-2 shadow-lg shadow-[#8b5cf6]/20"
+          className="bg-[#8b5cf6] text-white px-8 py-4 rounded-2xl hover:bg-[#7c3aed] transition-all font-inter flex items-center gap-2"
         >
           {loading ? (
             <i className="fas fa-spinner fa-spin"></i>
@@ -122,4 +122,6 @@ function Chatbot() {
   );
 }
 
+
 export default Chatbot;
+
