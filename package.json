@@ -4,6 +4,8 @@
   "private": true,
   "description": "A full-stack application combining React frontend and Express backend",
   "main": "api/index.js",
+  "homepage": ".",
+
   "scripts": {
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
     "start:frontend": "react-scripts start",
