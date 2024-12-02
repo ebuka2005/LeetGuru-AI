@@ -35,9 +35,10 @@ function Chatbot() {
 
     try {
       // Send the user input to the backend API
-      const response = await axios.post("http://localhost:5001/ask", {
+      const response = await axios.post("/api/ask", {
         message: input, // Send input as JSON
       });
+      
 
       // Extract the assistant's reply from the backend response
       const assistantMessage = { role: "assistant", content: response.data.reply };

@@ -3,13 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "description": "A full-stack application combining React frontend and Express backend",
-  "main": "api/index.js",
-  "homepage": "https://leetcode-test.vercel.app/",
-
+  "type": "module",
   "scripts": {
-    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "start": "concurrently \"npm run start:frontend\" \"vercel dev\"",
     "start:frontend": "react-scripts start",
-    "start:backend": "nodemon api/server.js",
     "build": "react-scripts build",
     "install:all": "npm install && npm --prefix api install",
     "vercel-build": "npm install && npm run build"
