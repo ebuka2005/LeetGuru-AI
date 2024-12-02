@@ -6,11 +6,8 @@
         "config": { "distDir": "build" }
       }
     ],
-    "routes": [
-      { "src": "/(.*)", "dest": "/" }
-    ],
     "rewrites": [
-        { "source": "/(.*)", "destination": "/index.html" }
+      { "source": "/(.*)", "destination": "/" }
     ]
   }
   

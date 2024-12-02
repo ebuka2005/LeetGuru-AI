@@ -4,6 +4,10 @@ const axios = require("axios");
 require("dotenv").config(); // To load environment variables from .env file
 
 const app = express();
+if (!process.env.OPENAI_API_KEY) {
+  console.error("Missing OpenAI API Key. Please set OPENAI_API_KEY in your environment.");
+  process.exit(1); // Exit the process if API key is not set
+}
 
 // Middleware to parse JSON in requests
 app.use(cors());

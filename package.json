@@ -4,7 +4,7 @@
   "private": true,
   "description": "A full-stack application combining React frontend and Express backend",
   "main": "api/index.js",
-  "homepage": "leetcode-test.vercel.app",
+  "homepage": "https://leetcode-test.vercel.app/",
 
   "scripts": {
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
