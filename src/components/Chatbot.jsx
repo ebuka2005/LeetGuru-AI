@@ -63,7 +63,7 @@ function Chatbot() {
         <div className="flex items-center gap-3">
           <i className="fas fa-robot text-2xl text-[#8b5cf6]"></i>
           <h1 className="text-2xl font-bold font-poppins bg-gradient-to-r from-[#8b5cf6] to-[#6d28d9] text-transparent bg-clip-text">
-            CodeMentor AI
+            LeetGuru AI
           </h1>
         </div>
         <div className="flex gap-3">
