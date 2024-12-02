@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import axios from "axios";
 
 function Chatbot() {
   const [messages, setMessages] = useState([
@@ -11,6 +12,7 @@ function Chatbot() {
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -21,12 +23,16 @@ function Chatbot() {
     setLoading(true);
 
     try {
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: "Let me help you with that..." },
-      ]);
-      setLoading(false);
+      // Send the user input to the backend API
+      const response = await axios.post("http://localhost:5001/ask", {
+        message: input, // Send input as JSON
+      });
+
+      // Extract the assistant's reply from the backend response
+      const assistantMessage = { role: "assistant", content: response.data.reply };
+      setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
+      console.error("Error:", error);
       setMessages((prev) => [
         ...prev,
         {
@@ -34,6 +40,7 @@ function Chatbot() {
           content: "Sorry, I encountered an error. Please try again.",
         },
       ]);
+    } finally {
       setLoading(false);
     }
   };
